@@ -1,7 +1,7 @@
-import './Library.css'
+import './Librarypage.css'
 import { useNavigate } from 'react-router-dom';
 
-export default function Library(){
+export default function Librarypage(){
     const navigate = useNavigate();
     const goToHomePage = () => {
     // Naviger til biblioteksiden
