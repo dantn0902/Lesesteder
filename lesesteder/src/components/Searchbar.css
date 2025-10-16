@@ -1,0 +1,27 @@
+.search{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-self: center;
+    padding: 8px;
+    border:none;
+    background-color: transparent;
+}
+.searchbox{
+    background-color: transparent;
+    border-color: white;
+    border-radius: 8px;
+}
+.searchbox input{
+    background-color: transparent;
+    border-radius: 8px;
+    border:none;
+}
+.addButton button{
+    background-color: transparent;
+    border: None;
+}
+.addButton button:hover{
+    border: None;
+    transform: scale(1.15);
+}

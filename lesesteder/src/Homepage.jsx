@@ -4,7 +4,7 @@ import bilde1 from "./assets/bilde1.png";
 import bilde2 from "./assets/bilde2.jpg";
 import bilde3 from "./assets/bilde3.jpg";
 import TopBar from './components/TopBar';
-
+import Searchbar from './components/Searchbar';
 
 export default function Homepage(){
     const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function Homepage(){
   };
     return(
         <div className='content'>
-            <TopBar></TopBar>
+            {/* <TopBar></TopBar> */}
             <div className='title'>
                  <h1>
                 Lesesteder
@@ -23,6 +23,8 @@ export default function Homepage(){
                 UiO
                 </p>
             </div>  
+            <Searchbar> 
+            </Searchbar>
             <div className='cards'>
                 <div className="library-card" onClick={() => goToLibraryPage()}>
                     <img src={bilde1} width='180px'></img>
