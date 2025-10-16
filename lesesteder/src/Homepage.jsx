@@ -1,7 +1,7 @@
 import './Homepage.css'
 import { useNavigate } from 'react-router-dom';
 import bilde1 from "./assets/bilde1.png";
-import { Library } from "./Library";
+import { Library } from "./model/Library";
 
 export default function Homepage(){
     // Navigasjon
@@ -36,6 +36,12 @@ export default function Homepage(){
                         <p>Åpningstid: {bib.åpent} - {bib.stengt}</p>
                     </div> 
                 ))}
+
+                {/*
+                {libraries.map((bib, i) => (
+                    <LibraryCard key={i} library={bib} onClick={() => goToLibraryPage()} />
+                ))}
+                */}
             </div>
         </div>
     )
