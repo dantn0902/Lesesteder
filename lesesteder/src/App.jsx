@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Homepage from './Homepage';
-import Library from './Librarypage';
+import Librarypage from './Librarypage';
 
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
       <div className="app">
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/Library" element={<Library />} />
+          <Route path="/Library" element={<Librarypage />} />
         </Routes>
       </div>
     </Router>

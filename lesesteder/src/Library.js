@@ -1,7 +1,12 @@
 export class Library {
-    constructor () {
-        this.åpent = 0;
-        this.stengt = 24
+    constructor(navn, src) {
+        this.navn = navn;
+        this.bilde = src;
+        this.åpent = 8;
+        this.stengt = 16;
         this.stillesone = true;
+        this.kafe = true;
+        this.sitteplasser = 0;
+        this.kollokvierom = true;
     }
 }
