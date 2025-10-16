@@ -1,15 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .content {
     display: flex;
     flex-direction: column;
-    justify-content:space-between ;
+    justify-content:center;
     align-content: center;
+    font-family: 'Roboto';
+    font-weight: 300;
 }
 
+h1 {
+    font-family: 'Roboto';
+    font-weight: 300;
+
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+}
 .library-card{
     background-color: rgb(34, 150, 71);
     border-radius: 8px;
+    align-self: center;
+    width: fit-content;
+    height: fit-content;
     padding: 20px;
-
+    margin: 8px;
     text-align: center;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -18,4 +34,16 @@
 .library-card:hover{
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.library-card img{
+    border-radius: 8px;
+}
+
+
+@media (min-width: 700px){
+    .cards{
+        display: flex;
+        flex-direction: row;
+    }
+    
 }
