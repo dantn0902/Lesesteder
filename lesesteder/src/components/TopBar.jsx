@@ -1,8 +1,29 @@
-
+import { useEffect } from 'react';
+import '../TopBar.css'
 
 export default function TopBar() {
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const topnav = document.getElementById("topnav");
+            const link = document.getElementById("link");
+
+            if (!topnav || !link) return;
+
+            if (window.scrollY > 50) {
+                topnav.classList.add("scrolled");
+            } else {
+                topnav.classList.remove("scrolled");
+            }
+        };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <h1>Halla</h1>
+        <div id="topnav" className="topnav">
+            <a id="link" className="active" href="#home">Lesesteder</a>
+        </div>
     )
 
 }
