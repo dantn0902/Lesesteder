@@ -1,0 +1,34 @@
+[
+    {
+        "navn": "Sophus Bugge bib.",
+        "bilde": "/assets/bilde1.png",
+        "åpent": 8.0,
+        "stengt": 16.0,
+        "stillesone": true,
+        "kafe": true
+    },
+    {
+        "navn": "Realfagsbib.",
+        "bilde": "/assets/bilde1.png",
+        "åpent": 8.0,
+        "stengt": 18.0,
+        "stillesone": true,
+        "kafe": false
+    },
+    {
+        "navn": "Helga Engh bib.",
+        "bilde": "/assets/bilde1.png",
+        "åpent": 8.0,
+        "stengt": 18.0,
+        "stillesone": true,
+        "kafe": false
+    },
+    {
+        "navn": "IFI bib.",
+        "bilde": "/assets/bilde1.png",
+        "åpent": 8.0,
+        "stengt": 18.0,
+        "stillesone": true,
+        "kafe": false
+    }
+]
