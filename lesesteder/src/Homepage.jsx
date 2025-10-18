@@ -2,6 +2,7 @@ import './Homepage.css'
 import { useNavigate } from 'react-router-dom';
 import bilde1 from "./assets/bilde1.png";
 import { Library } from "./Library";
+import TopBar from "./components/TopBar";
 
 export default function Homepage(){
     // Navigasjon
@@ -19,7 +20,7 @@ export default function Homepage(){
     ];
     return(
         <div className='content'>
-            {/*<TopBar></TopBar>*/}
+            <TopBar></TopBar>
             <div className='title'>
                 <p>
                 UiO
