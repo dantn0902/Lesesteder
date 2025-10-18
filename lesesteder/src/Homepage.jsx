@@ -21,9 +21,6 @@ export default function Homepage(){
         <div className='content'>
             {/*<TopBar></TopBar>*/}
             <div className='title'>
-                 <h1>
-                Lesesteder
-                </h1>
                 <p>
                 UiO
                 </p>
