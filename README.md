@@ -11,6 +11,7 @@ Hva appen skal tilby:
 - Stillesone
 - Kafe eller kantine i nærheten
 - Bilde av stedet
+- Antall printere og beliggenhet? (ifi har null printere i biblioteket)
 
 Senere funksjonaliteter:
 - Stikkontakter
