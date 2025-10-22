@@ -10,7 +10,7 @@ export default function App() {
       <div className="app">
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/Library" element={<Librarypage />} />
+          <Route path="/Librarypage/:id" element={<Librarypage />} />
         </Routes>
       </div>
     </Router>

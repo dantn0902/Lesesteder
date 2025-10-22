@@ -7,8 +7,8 @@ import libraries from "./data/Libraries";
 export default function Homepage(){
     // Navigasjon
     const navigate = useNavigate();
-    const goToLibraryPage = () => {
-        navigate(`/Library`);
+    const goToLibraryPage = (bib) => {
+        navigate(`/LibraryPage/${bib.navn}`);
     };
 
     // const [libraries, setLibraries] = useState([]);
@@ -22,7 +22,7 @@ export default function Homepage(){
             </div>  
             <div className='cards'>
                 {libraries.map((bib) => (
-                    <LibraryCard library={bib} onClickEvent={() => goToLibraryPage()} />
+                    <LibraryCard library={bib} onClickEvent={() => goToLibraryPage(bib)} />
                 ))}
             </div>
         </div>
