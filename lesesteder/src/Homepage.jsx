@@ -1,6 +1,6 @@
 import './styles/HomePage.css';
 import { useNavigate } from 'react-router-dom';
-import React, {useState, useMemo} from "react";
+import React, {useState, useEffect, useMemo} from "react";
 import TopBar from "./components/TopBar";
 import LibraryCard from "./components/LibraryCard";
 import librariesData from "./data/Libraries";
@@ -27,8 +27,6 @@ export default function Homepage(){
     const [libraries, setLibraries] = useState(librariesData);
     const [filtersOn, setFiltersOn] = useState([]); // Array for aa ta vare paa filtere som bruker har trykket
     const handleFilterChange = (update) => {
-        console.log("Updating filter:", update);
-        console.log("Previous filters:", filtersOn);
         setFiltersOn(prevFilters => {
             if (prevFilters.includes(update)) {
                 return prevFilters.filter(filter => filter !== update); // remove option
@@ -36,8 +34,14 @@ export default function Homepage(){
                 return [...prevFilters, update]; // add option
             }
         });
-        console.log("Current filters:", filtersOn);
     }
+
+    // Update libraries with filtered results
+     useEffect(() => {
+        setLibraries(librariesData.filter(library =>
+            filtersOn.every(filter => library[filter]) // make sure library matches all filters
+        )); 
+    }, [filtersOn]); // makes it so it is triggered when filtersOn changes
 
     return(
         <div className='content'>
