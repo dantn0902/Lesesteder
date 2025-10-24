@@ -8,7 +8,15 @@ import FilterScreen from "./components/FilterScreen";
 
 export default function Homepage(){
     // Filter
-   const [openFilterScreen, setFilterScreen] = useState(false)
+    const [openFilterScreen, setFilterScreen] = useState(false)
+    const handleFilterScreen = () => {
+            setFilterScreen(!openFilterScreen)
+    }
+
+    // Krav
+    const r = Object.keys(libraries[0]);
+    console.log(r)
+
     // Navigasjon
     const navigate = useNavigate();
     const goToLibraryPage = () => {
@@ -25,10 +33,10 @@ export default function Homepage(){
                 </p>
             </div>  
             <div className='filterButton'>
-                <button onClick={()=> setFilterScreen(!openFilterScreen)}>Filter</button>
+                <button onClick={()=> handleFilterScreen()}>Filter</button>
             </div>
             <div className={`filterScreen ${openFilterScreen ? "active" : ""}`}>
-                <FilterScreen></FilterScreen>
+                <FilterScreen event={()=> handleFilterScreen()} requirements={r}></FilterScreen>
             </div>
             <div className='cards'>
                 {libraries.map((bib) => (
