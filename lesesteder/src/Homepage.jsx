@@ -1,29 +1,28 @@
 import './styles/HomePage.css';
 import { useNavigate } from 'react-router-dom';
-import React, {useState} from "react";
+import React, {useState, useMemo} from "react";
 import TopBar from "./components/TopBar";
 import LibraryCard from "./components/LibraryCard";
-import libraries from "./data/Libraries";
+import librariesData from "./data/Libraries";
 import FilterScreen from "./components/FilterScreen";
 
 export default function Homepage(){
-    // Filter
-    const [openFilterScreen, setFilterScreen] = useState(false)
-    const handleFilterScreen = () => {
-            setFilterScreen(!openFilterScreen)
-    }
-
-    // Krav
-    const r = Object.keys(libraries[0]);
-    console.log(r)
-
     // Navigasjon
     const navigate = useNavigate();
     const goToLibraryPage = () => {
         navigate(`/Library`);
     };
+    
+    // Filter
+    const [openFilterScreen, setFilterScreen] = useState(false)
+    const handleFilterScreen = () => setFilterScreen(!openFilterScreen);
 
-    // const [libraries, setLibraries] = useState([]);
+    // Krav
+    const r = useMemo(() => {
+        console.log("keys computed");
+        return Object.keys(librariesData[0]);
+    }, []);
+
     return(
         <div className='content'>
             <TopBar></TopBar>
@@ -39,7 +38,7 @@ export default function Homepage(){
                 <FilterScreen event={()=> handleFilterScreen()} requirements={r}></FilterScreen>
             </div>
             <div className='cards'>
-                {libraries.map((bib) => (
+                {librariesData.map((bib) => (
                     <LibraryCard library={bib} onClickEvent={() => goToLibraryPage()} />
                 ))}
             </div>
