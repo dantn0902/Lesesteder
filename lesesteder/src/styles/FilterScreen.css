@@ -1,0 +1,9 @@
+
+.filterScreen {
+    display: none;
+}
+
+
+.filterScreen.active {
+    display: flex;
+}

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import '../TopBar.css'
+import '../styles/TopBar.css'
 
 export default function TopBar() {
 

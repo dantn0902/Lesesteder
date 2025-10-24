@@ -4,31 +4,75 @@
         "bilde": "/assets/bilde1.png",
         "åpent": 8.0,
         "stengt": 16.0,
+
+        "antSitteplass": 500,
+        "kollokvierom": true,
         "stillesone": true,
-        "kafe": true
+        "antPrinter": 1,
+
+        "kafe": true,
+        "kantine": false,
+
+        "stikkkontakt": 5.0,
+        "vindusplasser": 5.0,
+        "lys": 3.5,
+        "temperatur": 5.0
     },
     {
         "navn": "Realfagsbib.",
         "bilde": "/assets/bilde1.png",
         "åpent": 8.0,
         "stengt": 18.0,
+
+        "antSitteplass": 70,
+        "kollokvierom": true,
         "stillesone": true,
-        "kafe": false
+        "antPrinter": 1,
+
+        "kafe": false,
+        "kantine": false,
+
+        "stikkkontakt": 2.5,
+        "vindusplasser": 1.0,
+        "lys": 5.0,
+        "temperatur": 5.0
     },
     {
-        "navn": "Helga Engh bib.",
+        "navn": "Georg Sverdrups bib.",
         "bilde": "/assets/bilde1.png",
         "åpent": 8.0,
         "stengt": 18.0,
+
+        "antSitteplass": 10,
+        "kollokvierom": true,
         "stillesone": true,
-        "kafe": false
+        "antPrinter": 5,
+
+        "kafe": false,
+        "kantine": false,
+
+        "stikkkontakt": 3.0,
+        "vindusplasser": 5.0,
+        "lys": 4.5,
+        "temperatur": 4.0
     },
     {
         "navn": "IFI bib.",
         "bilde": "/assets/bilde1.png",
         "åpent": 8.0,
         "stengt": 18.0,
+
+        "antSitteplass": 90,
+        "kollokvierom": true,
         "stillesone": true,
-        "kafe": false
+        "antPrinter": 0,
+
+        "kafe": false,
+        "kantine": true,
+
+        "stikkkontakt": 5.0,
+        "vindusplasser": 5.0,
+        "lys": 2.5,
+        "temperatur": 5.0
     }
 ]
