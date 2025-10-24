@@ -18,15 +18,21 @@ export default function Homepage(){
     const handleFilterScreen = () => setFilterScreen(!openFilterScreen);
 
     // options for filter
-    const r = useMemo(() => {
-        console.log("keys computed");
-        return Object.keys(librariesData[0]);
+    const f = useMemo(() => {
+        return Object.keys(librariesData[0].fasiliteter);
+    }, []);
+    const t = useMemo(() => {
+        return Object.keys(librariesData[0].tjenester);
+    }, []);
+    const k = useMemo(() => {
+        return Object.keys(librariesData[0].komfor);
     }, []);
 
     // Filter 
     const [libraries, setLibraries] = useState(librariesData);
     const [filtersOn, setFiltersOn] = useState([]); // Array for aa ta vare paa filtere som bruker har trykket
     const handleFilterChange = (update) => {
+        console.log(update)
         setFiltersOn(prevFilters => {
             if (prevFilters.includes(update)) {
                 return prevFilters.filter(filter => filter !== update); // remove option
@@ -38,9 +44,15 @@ export default function Homepage(){
 
     // Update libraries with filtered results
      useEffect(() => {
-        setLibraries(librariesData.filter(library =>
-            filtersOn.every(filter => library[filter]) // make sure library matches all filters
-        )); 
+        //console.log("Current filters:", filtersOn);
+
+         const filteredLibraries = librariesData.filter(library =>
+            filtersOn.every(filter => library.fasiliteter[filter] || library.komfor[filter] || library.tjenester[filter]) // make sure library matches all filters
+        );
+
+        console.log("Filtered libraries:", filteredLibraries);
+        setLibraries(filteredLibraries); // Update libraries with filtered results
+
     }, [filtersOn]); // makes it so it is triggered when filtersOn changes
 
     return(
@@ -55,7 +67,7 @@ export default function Homepage(){
                 <button onClick={()=> handleFilterScreen()}>Filter</button>
             </div>
             <div className={`filterScreen ${openFilterScreen ? "active" : ""}`}>
-                <FilterScreen onClose={()=> handleFilterScreen()} options={r} onOptionToggle={handleFilterChange}></FilterScreen>
+                <FilterScreen onClose={()=> handleFilterScreen()} fasiliteter={f} tjenester={t} komfor={k} onOptionToggle={handleFilterChange}></FilterScreen>
             </div>
             <div className='cards'>
                 {libraries.map((bib) => (
