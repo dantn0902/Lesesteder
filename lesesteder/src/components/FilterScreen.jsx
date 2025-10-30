@@ -22,10 +22,13 @@ export default function FilterScreen({onClose, fasiliteter, tjenester, komfor, o
 
             <h3>Miljø og komfort</h3>
             {komfor.map((req) => (
-                <label key={req}>
+                <div>
+                    <label key={req}>
                     <input type="checkbox" value={req} onChange={(e) => onOptionToggle(e.target.value)}/>
                     {req}
-                </label>
+                    </label>
+                    <input type="range" min="1" max="5" value="0" class="slider" step="0.5"/>
+                </div>
             ))}
 
              <button onClick={ onClose }>Vis</button>
