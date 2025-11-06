@@ -1,4 +1,4 @@
-import './Librarypage.css'
+import './styles/Librarypage.css'
 import { useNavigate } from 'react-router-dom';
 
 export default function Librarypage(){

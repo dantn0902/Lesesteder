@@ -1,34 +1,98 @@
 [
     {
-        "navn": "Sophus Bugge bib.",
-        "bilde": "/assets/bilde1.png",
-        "åpent": 8.0,
-        "stengt": 16.0,
-        "stillesone": true,
-        "kafe": true
+        "praktisk": {
+            "navn": "Sophus Bugge bib.",
+            "bilde": "/assets/bilde1.png",
+            "åpent": 8.0,
+            "stengt": 16.0
+        },
+        "fasiliteter": {
+            "antSitteplass": 500,
+            "kollokvierom": true,
+            "stillesone": true,
+            "antPrinter": 1
+        },
+        "tjenester": {
+            "kafe": true,
+            "kantine": false
+        },
+        "komfor": {
+            "stikkkontakt": 5.0,
+            "vindusplasser": 5.0,
+            "lys": 3.5,
+            "temperatur": 5.0
+        }
     },
     {
-        "navn": "Realfagsbib.",
-        "bilde": "/assets/bilde1.png",
-        "åpent": 8.0,
-        "stengt": 18.0,
-        "stillesone": true,
-        "kafe": false
+        "praktisk": {
+            "navn": "Realfagsbib.",
+            "bilde": "/assets/bilde1.png",
+            "åpent": 8.0,
+            "stengt": 18.0
+        },
+        "fasiliteter": {
+            "antSitteplass": 70,
+            "kollokvierom": true,
+            "stillesone": true,
+            "antPrinter": 1
+        },
+        "tjenester": {
+            "kafe": false,
+            "kantine": false
+        },
+        "komfor": {
+            "stikkkontakt": 2.5,
+            "vindusplasser": 1.0,
+            "lys": 5.0,
+            "temperatur": 5.0
+        }
     },
     {
-        "navn": "Helga Engh bib.",
-        "bilde": "/assets/bilde1.png",
-        "åpent": 8.0,
-        "stengt": 18.0,
-        "stillesone": true,
-        "kafe": false
+        "praktisk": {
+            "navn": "Georg Sverdrups bib.",
+            "bilde": "/assets/bilde1.png",
+            "åpent": 8.0,
+            "stengt": 18.0
+        },
+        "fasiliteter": {
+            "antSitteplass": 10,
+            "kollokvierom": true,
+            "stillesone": true,
+            "antPrinter": 5
+        },
+        "tjenester": {
+            "kafe": false,
+            "kantine": false
+        },
+        "komfor": {
+            "stikkkontakt": 3.0,
+            "vindusplasser": 5.0,
+            "lys": 4.5,
+            "temperatur": 4.0
+        }
     },
     {
-        "navn": "IFI bib.",
-        "bilde": "/assets/bilde1.png",
-        "åpent": 8.0,
-        "stengt": 18.0,
-        "stillesone": true,
-        "kafe": false
+        "praktisk": {
+            "navn": "IFI bib.",
+            "bilde": "/assets/bilde1.png",
+            "åpent": 8.0,
+            "stengt": 18.0
+        },
+        "fasiliteter": {
+            "antSitteplass": 90,
+            "kollokvierom": true,
+            "stillesone": true,
+            "antPrinter": 0
+        },
+        "tjenester": {
+            "kafe": false,
+            "kantine": true
+        },
+        "komfor": {
+            "stikkkontakt": 5.0,
+            "vindusplasser": 5.0,
+            "lys": 2.5,
+            "temperatur": 5.0
+        }
     }
 ]
