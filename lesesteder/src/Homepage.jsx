@@ -31,16 +31,25 @@ export default function Homepage(){
     // Filter 
     const [libraries, setLibraries] = useState(librariesData);
     const [filtersOn, setFiltersOn] = useState([]); // Array for aa ta vare paa filtere som bruker har trykket
-    const handleFilterChange = (update) => {
-        console.log(update)
-        setFiltersOn(prevFilters => {
-            if (prevFilters.includes(update)) {
-                return prevFilters.filter(filter => filter !== update); // remove option
+    const handleFilterChange = (key, value) => {
+    // If only one argument, it came from checkbox
+        if (value === undefined) {
+            setFiltersOn((prevFilters) => {
+            if (prevFilters.includes(key)) {
+                return prevFilters.filter((filter) => filter !== key);
             } else {
-                return [...prevFilters, update]; // add option
+                return [...prevFilters, key];
             }
-        });
-    }
+            });
+        } else {
+            // It’s a slider update — store komfor value
+            setLibraries((prevLibs) =>
+            librariesData.filter((library) =>
+                library.komfor[key] >= value // or some comparison logic
+            )
+            );
+        }
+    };
 
     // Update libraries with filtered results
      useEffect(() => {
@@ -67,7 +76,7 @@ export default function Homepage(){
                 <button onClick={()=> handleFilterScreen()}>Filter</button>
             </div>
             <div className={`filterScreen ${openFilterScreen ? "active" : ""}`}>
-                <FilterScreen onClose={()=> handleFilterScreen()} fasiliteter={f} tjenester={t} komfor={k} onOptionToggle={handleFilterChange}></FilterScreen>
+                <FilterScreen onClose={()=> handleFilterScreen()} fasiliteter={f} tjenester={t} komfor={k} onOptionToggle={handleFilterChange} />
             </div>
             <div className='cards'>
                 {libraries.map((bib) => (

@@ -2,11 +2,10 @@ import "../styles/FilterScreen.css"
 
 export default function FilterScreen({onClose, fasiliteter, tjenester, komfor, onOptionToggle} ) {
     //console.log(options);
-    const handleSliderChange = (event, outputId) => {
-        const output = document.getElementById(outputId);
-        output.textContent = event.target.value; // Update the value displayed
+    const handleSliderChange = (event, req) => {
+        const value = parseFloat(event.target.value);
+        onOptionToggle(req, value); // send req + numeric value
     };
-    
     return (
         <div className="container">
             <h3>Fasiliteter og kapasitet</h3>
@@ -27,15 +26,19 @@ export default function FilterScreen({onClose, fasiliteter, tjenester, komfor, o
 
             <h3>Miljø og komfort</h3>
             {komfor.map((req) => (
-                <div>
-                    <div>
-                    <label key={req}>
-                    <input type="checkbox" value={req} onChange={(e) => onOptionToggle(e.target.value)}/>
-                    {req}
-                    </label>
-                    </div>
-                    <input type="range" min="1" max="5" value="0" className="slider" step="0.5" onChange={(e) => handleSliderChange(e, `output-${req}`)}/>
-                    <output id={`output-${req}`} className="value">0</output>
+                <div key={req}>
+                    <p value={req}>{req}</p>
+                    <input 
+                        type="range" 
+                        min="1" 
+                        max="5" 
+                        defaultValue="0" 
+                        step="0.5" 
+                        className="slider" 
+                        onChange={(e) => handleSliderChange(e, req)} 
+                        
+                    />
+                    {/*<output id={`output-${req}`} className="value">0</output>*/}
                 </div>
             ))}
 
